@@ -10,13 +10,20 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    output = [[1]]
+    
+    """ initialize an empty resulting array """
+    pascal = [[] for idx in range(n)]
 
-    for i in range(n - 1):
-        temp = [0] + output[-1] + [0]
-        row = []
-        for j in range(len(output[-1]) + 1):
-            row.append(temp[j] + temp[j + 1])
-            output.append(row)
+    for li in range(n):
+        for col in range(li+1):
+            if(col < li):
+                if(col == 0):
+                    """ the first column is always set to 1 """
+                    pascal[li].append(1)
+                else:
+                    pascal[li].append(pascal[li-1][col] + pascal[li-1][col-1])
+            elif(col == li):
+                """ the diagonal is always set to 1 """
+                pascal[li].append(1)
 
-    return (output)
+    return pascal
