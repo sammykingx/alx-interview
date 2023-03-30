@@ -4,7 +4,7 @@
 """
 
 
-def unlockBoxes(boxes=[]):
+def canUnlockAll(boxes=[]):
     """A function that returns True of all box in
     boxes can be opend
     """
