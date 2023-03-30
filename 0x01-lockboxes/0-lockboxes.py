@@ -9,9 +9,9 @@ def canUnlockAll(boxes=[]):
     boxes can be opend
     """
     if not boxes:
-        return (boxes)
+        return False
 
-    keys = set(boxes[0])
+    keys = set([0])
     for box_id, box in enumerate(boxes):
         for key in box:
             if key < len(boxes) and key != box_id:
@@ -31,6 +31,9 @@ if __name__ == '__main__':
                 [1, 2, 3],
             ]
     print(unlockBoxes(boxes))
+
+    boxes = [[1], [2], [3], [4], []]
+    print(canUnlockAll(boxes))
 
     boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
     print(unlockBoxes(boxes))
