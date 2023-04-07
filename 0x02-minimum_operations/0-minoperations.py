@@ -31,6 +31,14 @@ if __name__ == '__main__':
     from random import randint
     from time import time
 
+    n = 4
+    print("Min # of operations to reach {} char: {}".
+          format(n, minOperations(n)))
+
+    n = 12
+    print("Min # of operations to reach {} char: {}".
+          format(n, minOperations(n)))
+
     start_time = time()
 
     for i in range(10):
@@ -38,4 +46,4 @@ if __name__ == '__main__':
         print("Min # of operations to reach {} char: {}".
               format(n, minOperations(n)))
 
-    print(f'==> Program completed in {time() - start_time:.3f}s')
+    print('==> Program completed in {:.3f}s'.format(time() - start_time))
