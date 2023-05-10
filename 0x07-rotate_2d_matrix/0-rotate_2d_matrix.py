@@ -6,13 +6,11 @@
 def rotate_2d_matrix(matrix):
     """returns a 90 degrees rotated matrix"""
 
-    matrix.reverse()
-    matrix_in_90_deg = []
+    copy_matrix = matrix.copy()
+    matrix.clear()
 
-    for idx in range(len(matrix)):
-        temp_row = [element[idx] for element in matrix]
-        matrix_in_90_deg.append(temp_row)
+    copy_matrix.reverse()
 
-    matrix = matrix_in_90_deg
-
-    return matrix
+    for idx in range(len(copy_matrix)):
+        temp_row = [element[idx] for element in copy_matrix]
+        matrix.append(temp_row)
